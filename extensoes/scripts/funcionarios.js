@@ -75,7 +75,8 @@ function listarFuncionarios() {
                                     "<td>" + elem.cargo + "</td> " +
                                     "<td>" + elem.salario + "</td> " +
                                     "<td>" + elem.data_contratacao + "</td> " +
-                                    "</tr>";
+                                    "<td></td>"
+                                "</tr>";
                             });
                             $("#listarDadosFuncionarios").html(html);
                         }

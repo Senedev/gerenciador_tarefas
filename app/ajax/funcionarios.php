@@ -45,14 +45,14 @@ if ($acao == "listarFuncionarios") {
     $sql = "SELECT * FROM funcionarios";
     $resultado = mysqli_query($connection, $sql);
     while ($row = mysqli_fetch_assoc($resultado)) {
-        $dados[] = $row;
+        $info[] = $row;
     }
 
     # Retorna para o front o resultado da consulta
     if ($resultado) {
         $response['error'] = false;
         $response['msg'] = "";
-        $response['dados'] = $dados;
+        $response['dados'] = $info;
     } else {
         $response['error'] = true;
         $response['msg'] = "Não foi possível buscar os funcionários!";
