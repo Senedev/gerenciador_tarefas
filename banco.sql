@@ -3,7 +3,7 @@ CREATE DATABASE gerenciador_tarefas;
 USE gerenciador_tarefas;
 
 CREATE TABLE tarefas (
-    id_tarefa INT PRIMARY KEY,
+    id_tarefa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     titulo VARCHAR(100) NOT NULL,
     descricao TEXT,
     data_criacao DATE,
@@ -15,7 +15,7 @@ CREATE TABLE tarefas (
 );
 
 CREATE TABLE funcionarios (
-    id_funcionario INT PRIMARY KEY,
+    id_funcionario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     telefone VARCHAR(20),
