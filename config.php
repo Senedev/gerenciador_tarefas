@@ -7,6 +7,6 @@ $banco = "gerenciador_tarefas";
 
 $connection = mysqli_connect($servidor, $usuario, $senha, $banco);
 
-if (!empty($connection)) {
-    mysqli_error($connection);
+if (!$connection) {
+    die("Houve um erro na conexão: " . mysqli_connect_error());
 }

@@ -6,6 +6,8 @@
 
 <body>
 
+    <?php include_once '../layout/menu.php' ?>
+
 </body>
 
 </html>
