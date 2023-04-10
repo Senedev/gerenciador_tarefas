@@ -32,7 +32,7 @@
 
     <div class="text-center">
         <a href="painel.php"><button class="btn btn-secondary">Retornar ao painel principal</button></a>
-        <a><button class="btn btn-success" onclick="exibirModal()">Cadastrar</button></a>
+        <a><button class="btn btn-success" onclick="cadastrarFuncionario()">Cadastrar</button></a>
     </div>
 
     <!-- Modal -->
@@ -63,7 +63,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-success" id="modalCadastrarFuncionario" onclick="cadastrarFuncionario()">Cadastrar</button>
+                    <button type="button" class="btn btn-success" id="modalCadastrarFuncionario" onclick="salvarFuncionario()">Cadastrar</button>
                     <button type="button" class="btn btn-success" id="modalAtualizarFuncionario" onclick="atualizarFuncionario()">Atualizar</button>
                 </div>
             </div>

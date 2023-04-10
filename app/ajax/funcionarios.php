@@ -73,7 +73,7 @@ if ($acao == "editarFuncionario") {
     $id = $_POST['id'];
 
     # Realiza a consulta no banco
-    $sql = "SELECT * from funcionarios WHERE id_funcionario='$id'";
+    $sql = "SELECT * from funcionarios WHERE id_funcionario='$id' LIMIT 1";
     $resultado = mysqli_query($connection, $sql);
     $funcionario = mysqli_fetch_assoc($resultado);
 
@@ -98,7 +98,7 @@ if ($acao == "atualizarFuncionario") {
     # Recebe os dados vindos do método POST
     $dados = $_POST;
 
-    # Recebe os dados vindos do método POST
+    # # Cria variaveis para armazenar os dados do usuário
     $id = $dados['id'];
     $nome = $dados['nome'];
     $email = $dados['email'];
@@ -118,6 +118,33 @@ if ($acao == "atualizarFuncionario") {
     } else {
         $response['error'] = true;
         $response['msg'] = "Não foi possível atualizar o funcionário!";
+        echo mysqli_error($connection);
+    }
+
+    # Retorna o JSON pois o AJAX espera como retorno um JSON
+    echo json_encode($response);
+}
+
+# Verifica se a ação é remover funcionário, se for faz a operação no banco..
+if ($acao == "removerFuncionario") {
+
+    # Recebe os dados vindos do método POST
+    $dados = $_POST;
+
+    # Cria uma variavel para armazenar o ID do usuário
+    $id = $dados['id'];
+
+    # Remove o funcionário do banco de dados
+    $sql = "DELETE FROM funcionarios WHERE id_funcionario='$id'";
+    $resultado = mysqli_query($connection, $sql);
+
+    # Retorna para o front o resultado da consulta
+    if ($resultado) {
+        $response['error'] = false;
+        $response['msg'] = "Funcionário removido com sucesso!";
+    } else {
+        $response['error'] = true;
+        $response['msg'] = "Não foi possível remover o funcionário!";
         echo mysqli_error($connection);
     }
 

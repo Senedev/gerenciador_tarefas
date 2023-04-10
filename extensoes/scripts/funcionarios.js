@@ -2,10 +2,6 @@ $(document).ready(function () {
     listarFuncionarios();
 });
 
-function exibirModal() {
-    modal.show();
-}
-
 var modal = new bootstrap.Modal(document.getElementById('cadastrarFuncionario'));
 
 function cadastrarFuncionario() {
@@ -180,4 +176,31 @@ function atualizarFuncionario() {
             console.log("Deu tudo errado");
         }
     });
+}
+
+function removerFuncionario(id) {
+
+    var dadosForm = {
+        acao: "removerFuncionario",
+        id: id
+    }
+
+    $.ajax({
+        method: "POST",
+        url: "../ajax/funcionarios.php",
+        dataType: 'json',
+        data: dadosForm,
+        success: function (data) {
+            if (data.error == true) {
+                alert(data.msg);
+            } else {
+                alert(data.msg);
+                listarFuncionarios();
+            }
+        },
+        error: function (data) {
+            console.log("Deu tudo errado");
+        }
+    });
+
 }
