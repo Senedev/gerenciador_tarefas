@@ -33,8 +33,8 @@
     </div>
 
     <div class="text-center">
-        <a><button class="btn btn-success" onclick="">Cadastrar</button></a>
         <a href="painel.php"><button class="btn btn-secondary">Retornar ao painel principal</button></a>
+        <a><button class="btn btn-success" onclick="">Cadastrar</button></a>
     </div>
 
 </body>
