@@ -44,6 +44,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="modalFuncionarioDiv">
+                        <label for="modalIdFuncionario">ID</label>
+                        <input class="form-control" type="text" id="modalIdFuncionario" aria-label="" disabled>
+                    </div>
                     <label for="modalNomeFuncionario">Nome</label>
                     <input class="form-control" type="text" id="modalNomeFuncionario" aria-label="">
                     <label for="modalEmailFuncionario">Email</label>
@@ -60,6 +64,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="button" class="btn btn-success" id="modalCadastrarFuncionario" onclick="cadastrarFuncionario()">Cadastrar</button>
+                    <button type="button" class="btn btn-success" id="modalAtualizarFuncionario" onclick="atualizarFuncionario()">Atualizar</button>
                 </div>
             </div>
         </div>
