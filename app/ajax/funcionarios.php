@@ -6,7 +6,7 @@ include_once '../../config.php';
 # Recebe os dados que estão vindos através do método POST
 $dados = $_POST;
 
-# Armazena a ação que está sendo enviada do arquivo JSON
+# Armazena a ação que está sendo enviada pelo método POST
 $acao = $dados['acao'];
 
 # Verifica se a ação é cadastrar funcionário, se for faz a operação no banco..

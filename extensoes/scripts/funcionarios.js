@@ -13,7 +13,7 @@ function cadastrarFuncionario() {
     // Apresenta o modal ao usuario
     modal.show();
 
-    // Define a acao para o back e coleta os dados preenchidos nos campos do form
+    // DRecebe os dados vindos do form
     var dadosForm = {
         acao: "cadastrarFuncionario",
         nome: $("#modalNomeFuncionario").val(),
