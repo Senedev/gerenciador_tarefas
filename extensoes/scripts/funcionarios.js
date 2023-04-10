@@ -2,6 +2,12 @@ $(document).ready(function () {
     listarFuncionarios();
 });
 
+function formatarData(dado) {
+    var data = new Date(dado);
+    data = data.toLocaleDateString();
+    return data;
+}
+
 var modal = new bootstrap.Modal(document.getElementById('cadastrarFuncionario'));
 
 function cadastrarFuncionario() {
@@ -83,8 +89,8 @@ function listarFuncionarios() {
                                     "<td>" + elem.email + "</td> " +
                                     "<td>" + elem.telefone + "</td > " +
                                     "<td>" + elem.cargo + "</td> " +
-                                    "<td>" + elem.salario + "</td> " +
-                                    "<td>" + elem.data_contratacao + "</td> " +
+                                    "<td>R$ " + elem.salario + "</td> " +
+                                    "<td>" + formatarData(elem.data_contratacao) + "</td> " +
                                     "<td><a onclick='editarFuncionario(" + elem.id_funcionario + ")'><img src='../../app/assets/img/editar.png' alt='Editar'></a></td>" +
                                     "<td><a onclick='removerFuncionario(" + elem.id_funcionario + ")'><img src='../../app/assets/img/remover.png' alt='Remover'></a></td>" +
                                     "<td></td>"
