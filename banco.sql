@@ -23,7 +23,3 @@ CREATE TABLE funcionarios (
     salario DECIMAL(10,2),
     data_contratacao DATE
 );
-
-CREATE TABLE teste (
-    
-);
